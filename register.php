@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Set page title and include header AFTER processing
-$pageTitle = 'Register - Kaira Fashion Store';
+$pageTitle = 'Register - Alaa Fashion Store';
 include 'includes/header.php';
 ?>
 
@@ -70,7 +70,7 @@ include 'includes/header.php';
             <div class="card shadow-lg border-0">
                 <div class="card-body p-5">
                     <div class="text-center mb-4">
-                        <div class="logo-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">K</div>
+                        <div class="logo-icon mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">A</div>
                         <h2 class="h3 mb-2">Create Account</h2>
                         <p class="text-muted">Join our fashion community</p>
                     </div>
