@@ -1,14 +1,12 @@
 <?php
 session_start();
 include 'includes/db.php';
-
-// السماح فقط للمسؤول
+// Check if user is logged in and is an admin
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: index.php");
     exit;
 }
-
-// حذف منتج
+// 
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $id = intval($_GET['delete']);
     $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
@@ -17,14 +15,12 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $deleteSuccess = true;
 }
 
-// جلب إحصائيات
 $stats = [];
 $stats['products'] = $conn->query("SELECT COUNT(*) as count FROM products")->fetch_assoc()['count'];
 $stats['orders'] = $conn->query("SELECT COUNT(*) as count FROM orders")->fetch_assoc()['count'] ?? 0;
 $stats['users'] = $conn->query("SELECT COUNT(*) as count FROM users WHERE role = 'user'")->fetch_assoc()['count'];
 $stats['revenue'] = $conn->query("SELECT SUM(total) as total FROM orders")->fetch_assoc()['total'] ?? 0;
 
-// جلب المنتجات
 $result = $conn->query("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON p.category_id = c.id ORDER BY p.created_at DESC");
 include 'includes/header.php';
 ?>

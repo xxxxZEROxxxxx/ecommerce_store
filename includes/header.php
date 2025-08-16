@@ -1,7 +1,5 @@
 <?php
-// ============================
-// includes/header.php (updated with unified design)
-// ============================
+
 $baseUrl = '/ecommerce_store';
 if (!isset($pageTitle)) {
     $pageTitle = 'Alaa Fashion Store';

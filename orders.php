@@ -50,7 +50,7 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $orders = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-$pageTitle = 'My Orders - Kaira Fashion Store';
+$pageTitle = 'My Orders - Alaa Fashion Store';
 include 'includes/header.php';
 ?>
 

@@ -2,7 +2,7 @@
 session_start();
 include 'includes/db.php';
 
-$pageTitle = 'Order Success - Kaira Fashion Store';
+$pageTitle = 'Order Success - Alaa Fashion Store';
 include 'includes/header.php';
 
 // تحقق من وجود معرف الطلب في الرابط
@@ -14,7 +14,7 @@ if (!isset($_GET['order_id'])) {
 $order_id = (int) $_GET['order_id'];
 $user_id = $_SESSION['user_id'];
 
-// جلب بيانات الطلب من قاعدة البيانات
+
 $order_query = $conn->prepare("SELECT * FROM orders WHERE id = ? AND user_id = ?");
 $order_query->bind_param("ii", $order_id, $user_id);
 $order_query->execute();
@@ -27,7 +27,6 @@ if ($order_result->num_rows === 0) {
 
 $order = $order_result->fetch_assoc();
 
-// جلب عناصر الطلب
 $items_query = $conn->prepare("
     SELECT oi.*, p.name, p.image 
     FROM order_items oi

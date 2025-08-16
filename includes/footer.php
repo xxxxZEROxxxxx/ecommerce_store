@@ -1,10 +1,6 @@
 <?php
 include 'db.php';
-// ============================
-// includes/footer.php
-// ============================
-// Usage: include 'includes/footer.php';
-// Closes the container div opened in header.php and appends footer/scripts.
+
 ?>
 </div><!-- /container -->
 
@@ -68,7 +64,7 @@ include 'db.php';
         <div class="contact-info">
           <div class="d-flex align-items-center mb-2">
             <i class="fas fa-phone me-2 text-primary"></i>
-            <span class="text-muted">+1 (555) 123-4567</span>
+            <span class="text-muted">+972599999999</span>
           </div>
           <div class="d-flex align-items-center">
             <i class="fas fa-envelope me-2 text-primary"></i>
